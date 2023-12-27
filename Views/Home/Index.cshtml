@@ -2,7 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<form> 
+    <div class="form-group">
+        <label for="messageInput">Value</label>
+        <input class="form-control" placeholder="Enter a value"  type="text" id="valueInput" />
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" type="button" id="sendButton" value="Enter Value" />
+    </div>
+</form>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
 </div>
+<div id="chartArea">
+</div>
+
+@section Scripts
+{
+ <script src="~/js/signalr/dist/browser/signalr.js"></script>
+ <script src="~/js/charting.js"></script>
+}
