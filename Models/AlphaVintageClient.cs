@@ -6,8 +6,8 @@ namespace Real_Time_Charts_SignalR.Models;
 public class AlphaVintageClient
 {
     private readonly string api_key = "GRF50A5KS6HYE1FH";
-    private readonly string fromCurrency;
-    private readonly string toCurrency;
+    public string fromCurrency { get; set; }
+    public string toCurrency { get; set; }
 
     public AlphaVintageClient(string fromCurrency, string toCurrency)
     {
