@@ -26,6 +26,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapHub<ChartHub>("/chartHub");
+app.MapHub<ChartHub>("/charthub");
 
 app.Run();
