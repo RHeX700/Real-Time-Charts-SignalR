@@ -1,10 +1,16 @@
 using Real_Time_Charts_SignalR.Hubs;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
+using Real_Time_Charts_SignalR.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container.)
+builder.Services.AddTransient<IAlphaVintageClient, AlphaVintageClient>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSignalR();
+builder.Services.AddJob();
 
 var app = builder.Build();
 
@@ -28,4 +34,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapHub<ChartHub>("/charthub");
 
-app.Run();
+app.Run("https://localhost:7199");
